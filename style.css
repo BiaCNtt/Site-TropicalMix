@@ -1,0 +1,7 @@
+body{
+
+background: -moz-linear-gradient(left, #ad3bec, #dba0fb);
+background: -ms-linear-gradient(left, #ad3bec, #dba0fb);
+background: -o-linear-gradient(left, #ad3bec, #dba0fb);
+background: linear-gradient(to right, #ad3bec, #dba0fb);
+}
