@@ -1,7 +1,14 @@
 body{
 
-background: -moz-linear-gradient(left, #ad3bec, #dba0fb);
-background: -ms-linear-gradient(left, #ad3bec, #dba0fb);
-background: -o-linear-gradient(left, #ad3bec, #dba0fb);
-background: linear-gradient(to right, #ad3bec, #dba0fb);
+        
+    background: -webkit-linear-gradient(left, #57109b, #dcb1f4);
+    background: -moz-linear-gradient(left, #57109b, #dcb1f4);
+    background: -ms-linear-gradient(left, #57109b, #dcb1f4);
+    background: -o-linear-gradient(left, #57109b, #dcb1f4);
+    background: linear-gradient(to right, #57109b, #dcb1f4);
+}
+
+.container-fluid .titulo{
+    font-size: 30px;
+    
 }

@@ -13,6 +13,6 @@ if(!isset($POST['nome'])){ //checa o método e não permitir incluir após eles
 }
 
 
-header("Location: index.php");
+header("Location: cadastro.php");
 exit;
 ?>

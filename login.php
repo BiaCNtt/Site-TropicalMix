@@ -7,7 +7,6 @@
 <?php require 'head.php'; ?>
 
 <html>
-    <main>
         <div class="container mt-5" id="formulario">
             <div class="row">
                 <!-- Formulário de Login -->
