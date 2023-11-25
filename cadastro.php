@@ -27,14 +27,6 @@
                                 <label for="cpf" class="form-label">CPF:</label>
                                 <input type="text" class="form-control" name="cpf" id="cpf" required placeholder="Seu CPF">
                             </div>
-                            <div class="col">
-                                <label for="sexo" class="form-label">Sexo:</label>
-                                <select class="form-select" name="sexo" id="sexo" required>
-                                    <option value="masculino">Masculino</option>
-                                    <option value="feminino">Feminino</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="endereco" class="form-label">Endereço:</label>
