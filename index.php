@@ -5,15 +5,11 @@
 ?>
 
 <?php require 'head.php'; ?>
-
-<html>
-
 <body>
 <?php require 'navbar.php'; ?>
 
 
-</body>
-</html>
+<?php require 'footer.php'; ?>
 
 
 
