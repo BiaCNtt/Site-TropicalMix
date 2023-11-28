@@ -4,12 +4,4 @@
    
 }
 
-body{
-    background: -webkit-linear-gradient(bottom, #57109b, #dcb1f4);
-    background: -moz-linear-gradient(bottom, #57109b, #dcb1f4);
-    background: -ms-linear-gradient(bottom, #57109b, #dcb1f4);
-    background: -o-linear-gradient(bottom, #57109b, #dcb1f4);
-    background: linear-gradient(to bottom, #57109b, #dcb1f4);
-}
-
 

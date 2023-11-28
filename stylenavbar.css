@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Hanuman:wght@300;400&family=Istok+Web:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#menu{
+  padding-top: 0px;
+}
+
+.navbar .container-fluid {
+    background-color: pink;
+    padding-top: 10px;
+}
+
+.navbar .navbar-brand .titulo {
+    font-size: 30px;
+    color: rgb(85, 13, 133);
+    font-family: 'Hanuman';
+    font-weight: bold;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-family: 'Hanuman';
+}
+
+
