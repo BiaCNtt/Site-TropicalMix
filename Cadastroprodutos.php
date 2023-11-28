@@ -28,7 +28,8 @@
                 <label for="img" class="form-label">Imagem:</label>
                 <input type="file" class="form-control" id="img" name="img" accept="images/*" placeholder="Imagem do Produto">
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <div class = "botaoproduct"><button type="submit" class="btn">Cadastrar</button> </div>
+            
         </form>
     </div>
 </div>

@@ -1,14 +1,15 @@
 <?php
 class Clientes extends model{
 
-	public function adicionar($nome,$data_nascimento, $cpf,$endereco,$email, $senha){
-		$sql = "INSERT INTo clientes (nome, data_nascimento, cpf, endereco, email, senha)
-		        VALUES (:nome, :data_nascimento, :cpf, :endereco,:email, :senha)";
+	public function adicionarclientes($nome,$data_nascimento, $cpf,,$celular,$endereco,$email, $senha){
+		$sql = "INSERT INTo clientes (nome, data_nascimento, cpf, celular, endereco, email, senha)
+		        VALUES (:nome, :data_nascimento, :cpf, :celular, :endereco,:email, :senha)";
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(":nome"    , $nome);
 		$sql->bindValue(":data_nascimento"   , $data_nascimento);
         $sql->bindValue(":cpf"    , $cpf);
+		$sql->bindValue(":celular", $celular);
         $sql->bindValue(":endereco", $endereco);
         $sql->bindValue(":email"    , $email);
         $sql->bindValue(":senha"    , $senha);
@@ -17,11 +18,13 @@ class Clientes extends model{
 		return $this->db->lastInsertId();
 	}
 
-	public function editar($nome,$data_nascimento, $cpf,$endereco,$email, $senha){
+
+	public function editar($nome,$data_nascimento, $cpf,$celular,$endereco,$email, $senha){
 		$sql = "UPDATE clientes
 		           SET nome     = :nome
 		             , data_nascimento    = :data_nascimento
                      , cpf      = :cpf
+					 , celular  = :celular
                      , endereco = :endereco
                      , email    = :email
                      , senha    = :senha
@@ -31,6 +34,7 @@ class Clientes extends model{
 		$sql->bindValue(":nome"     , $nome);
 		$sql->bindValue(":data_nascimento"    , $data_nascimento);
         $sql->bindValue(":cpf" , $cpf);
+		$sql->bindValue(":celular", $celular);
         $sql->bindValue(":endereco" , $endereco);
         $sql->bindValue(":email" , $email);
         $sql->bindValue(":senha" , $senha);

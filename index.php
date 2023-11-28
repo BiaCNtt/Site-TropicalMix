@@ -3,7 +3,7 @@
     $clientes = new Clientes();
     $dados = $clientes->getAll();
 ?>
-
+ 
 <?php require 'head.php'; ?>
 <?php require 'navbar.php'; ?>
 
@@ -17,7 +17,7 @@
     </div>
   </div>
   <section class="faixa"></section>  
-  <h3 class = "produtos">Nossos produtos<h3>
+  <h3 class = "produtostitulo">Nossos produtos<h3>
 </div>
 
 </body>

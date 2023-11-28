@@ -3,13 +3,13 @@
 	$nome     = $_POST['nome'];
     $descricao      = $_POST['descricao'];
 	$preco    = floatval($_POST['preco']); 
-	$quant    = intval($_POST['quant']); 
+	$quantidade_em_estoque = intval($_POST['quant']); 
 
 
-	if(isset($_POST['nome'])){
+	if(!isset($_POST['nome'])){
 		require 'run.php';
 		$produtos = new Produtos();
-		$id_produto = $produtos->adicionarprodutos($nome, $preco, $quant, $descricao);
+		$id_produto = $produtos->adicionarprodutos($nome, $preco, $quantidade_em_estoque, $descricao);
 	}	
 
 	if(isset($_FILES['img']['name']) && !empty($_FILES['img']['name'])){

@@ -1,14 +1,14 @@
 <?php
 class produtos extends model{
 
-	public function adicionarprodutos($nome,$preco, $quant,$descricao){
-		$sql = "INSERT INTO produtos (nome, preco, quant, descricao)
+	public function adicionarprodutos($nome,$preco, $quantidade_em_estoque,$descricao){
+		$sql = "INSERT INTO produtos (nome, preco,quantidade_em_estoque , descricao)
 		        VALUES (:nome, :preco, :quant, :descricao)";
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(":nome"    , $nome);
 		$sql->bindValue(":preco"   , $preco);
-        $sql->bindValue(":quant"   , $quant);
+        $sql->bindValue(":quant"   , $quantidade_em_estoque);
         $sql->bindValue(":descricao"     , $descricao);
 		$sql->execute();
 
@@ -17,7 +17,7 @@ class produtos extends model{
 
         public function imagem($id_produto, $imagem) {
         $sql = "UPDATE produtos
-                SET imgP = :imagem 
+                SET img = :imagem 
                 WHERE id_produto = :id_produto";
 
         $sql = $this->db->prepare($sql);
@@ -26,18 +26,18 @@ class produtos extends model{
         $sql->execute();
     }
 
-	public function editarprodutos($id_produto,$nome,$preco,$quant,$descricao){
+	public function editarprodutos($id_produto,$nome,$preco,$quantidade_em_estoque,$descricao){
 		$sql = "UPDATE pessoa 
 		           SET nome     = :nome
 		             , preco    = :preco
-                     , quant   = :quant
+                     , quantidade_em_estoque   = :quant
                      , descricao  = :descricao
 		         WHERE id_produto = :id_produto";
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(":nome"     , $nome);
 		$sql->bindValue(":preco"    , $preco);
-        $sql->bindValue(":quant"    , $quant);
+        $sql->bindValue(":quantidade_em_estoque"    , $$quantidade_em_estoque);
         $sql->bindValue(":descricao"      , $descricao);
 		$sql->bindValue(":id_produto", $id_produto);
 		$sql->execute();

@@ -29,6 +29,10 @@
                             </div>
                         </div>
                         <div class="mb-3">
+                        <label for="celular" class="form-label">Celular</label>
+                        <input type="tel" class="form-control" id="celular" name="celular"placeholder="Informe seu celular" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="endereco" class="form-label">Endereço:</label>
                             <input type="text" class="form-control" id="endereco" name="endereco" required placeholder="Seu endereço">
                         </div>

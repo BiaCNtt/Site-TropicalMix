@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+  
    
 }
 
@@ -33,7 +34,7 @@ section {
     background-color:  #daa520; /* Cor da seção */
   }
 
- .produtos{
+ .produtostitulo{
     padding-top: 25px;
     display: flex;
     justify-content: center;
@@ -42,6 +43,26 @@ section {
     font-weight: bolder;
   }
 
+  .container .botaoproduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .container .botaoproduct .btn {
+    width: 200px; /* Ajuste o valor conforme necessário */
+    font-size: 15px;
+    background-color: #3a0055;
+    color: white;
+}
+
+
+  #formulario{
+    padding-top: 10px;
+    margin-top: 15px;
+    color: #3a0055;
+  }
+
+  
 
   
