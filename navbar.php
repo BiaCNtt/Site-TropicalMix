@@ -10,7 +10,7 @@
           <a class="nav-link" href="index.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Comprar</a>
+          <a class="nav-link" href="Comprar.php">Comprar</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
@@ -18,7 +18,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Listar produtos</a></li>
-            <li><a class="dropdown-item" href="Produtos.php">Cadastrar produtos</a></li>
+            <li><a class="dropdown-item" href="Cadastroprodutos.php">Cadastrar produtos</a></li>
           </ul>
         </li>
       </ul>
