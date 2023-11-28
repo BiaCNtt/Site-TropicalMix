@@ -5,23 +5,23 @@
 ?>
 
 <?php require 'head.php'; ?>
-
 <?php require 'navbar.php'; ?>
+
 <body>
-<!-- 
-<img src="logo.png" class="img-fluid" alt="..."> -->
-<div class="container text-center">
-  <div class="row align-items-center">
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
+<div class="container-fluid">
+<img src="banner.png" class="img-fluid" alt="banner">
+  <div class="container text-center">
+    <div class="row align-items-center">
+      <p class ="texto"> Embarque nesta jornada de bem-estar e paladares exóticos, onde cada taça de açaí é 
+        cuidadosamente preparada para oferecer uma explosão de frescor e vitalidade.</p>
     </div>
   </div>
+  <section class="faixa"></section>  
+  <h3 class = "produtos">Nossos produtos<h3>
 </div>
-    
+
 </body>
+
 
 <?php require 'footer.php'; ?>
 

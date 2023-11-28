@@ -9,14 +9,18 @@
   padding-top: 0px;
 }
 
+.navbar-nav .dropdown-menu {
+    position: static;
+    background-color: #3a0055;
+}
 .navbar .container-fluid {
-    background-color: pink;
+    background-color: #3a0055;
     padding-top: 10px;
 }
 
 .navbar .navbar-brand .titulo {
     font-size: 30px;
-    color: rgb(85, 13, 133);
+    color: rgb(255, 255, 255);
     font-family: 'Hanuman';
     font-weight: bold;
 }
@@ -24,6 +28,7 @@
 .navbar ul li a {
     font-size: 20px;
     font-family: 'Hanuman';
+    color: rgb(255, 255, 255);
 }
 
 
