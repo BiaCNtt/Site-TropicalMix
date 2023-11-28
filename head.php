@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="icon" href="logo.png" type="image/x-icon">
+		<link rel="icon" href="images/logo.png" type="image/x-icon">
 		<title>TROPICAL MIX </title>
 		<meta charset="utf-8">		
 		<meta content="width=device-width, initia-scale=1.0, user-scalabre=0" name="viewport">

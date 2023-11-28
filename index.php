@@ -9,7 +9,7 @@
 
 <body>
 <div class="container-fluid">
-<img src="banner.png" class="img-fluid" alt="banner">
+<img src="images/banner.png" class="img-fluid" alt="banner">
   <div class="container text-center">
     <div class="row align-items-center">
       <p class ="texto"> Embarque nesta jornada de bem-estar e paladares exóticos, onde cada taça de açaí é 
