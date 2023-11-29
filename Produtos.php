@@ -1,5 +1,5 @@
 <?php
-class produtos extends model{
+class Produtos extends model{
 
 	public function adicionarprodutos($nome,$preco, $quantidade_em_estoque,$descricao){
 		$sql = "INSERT INTO produtos (nome, preco,quantidade_em_estoque , descricao)
@@ -15,17 +15,7 @@ class produtos extends model{
 		return $this->db->lastInsertId();
 	}
 
-        public function imagem($id_produto, $imagem) {
-        $sql = "UPDATE produtos
-                SET img = :imagem 
-                WHERE id_produto = :id_produto";
-
-        $sql = $this->db->prepare($sql);
-        $sql->bindValue(":imagem", $imagem);
-        $sql->bindValue(":id_produto", $id_produto);
-        $sql->execute();
-    }
-
+	//função de editar os produtos
 	public function editarprodutos($id_produto,$nome,$preco,$quantidade_em_estoque,$descricao){
 		$sql = "UPDATE pessoa 
 		           SET nome     = :nome
@@ -50,6 +40,19 @@ class produtos extends model{
 		$sql->bindValue(":id_produto", $id_produto);
 		$sql->execute();
 	}
+	
+	////função da imagem
+	public function imagem($id_produto, $imagem) {
+        $sql = "UPDATE produtos
+                SET imagem = :imagem 
+                WHERE id_produto = :id_produto";
+
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(":imagem", $imagem);
+        $sql->bindValue(":id_produto", $id_produto);
+        $sql->execute();
+    } 
+
 
 	public function get($id_produto){
 		$array = array();

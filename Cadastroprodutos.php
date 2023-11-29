@@ -1,3 +1,9 @@
+<?php
+    require 'run.php';
+    $produtos = new produtos();
+    $dados = $produtos->getAll();
+?>
+    
     <?php require 'head.php'; ?>
     <?php require 'navbar.php'; ?>
 
@@ -25,8 +31,8 @@
                 <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produtos">
             </div>
             <div class="mb-3">
-                <label for="img" class="form-label">Imagem:</label>
-                <input type="file" class="form-control" id="img" name="img" accept="images/*" placeholder="Imagem do Produto">
+                <label for="imagem" class="form-label">Imagem:</label>
+                <input type="file" class="form-control" id="imagem" name="imagem" accept="images/*" placeholder="Imagem do Produto">
             </div>
             <div class = "botaoproduct"><button type="submit" class="btn">Cadastrar</button> </div>
             

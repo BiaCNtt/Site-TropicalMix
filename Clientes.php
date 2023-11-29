@@ -1,7 +1,7 @@
 <?php
 class Clientes extends model{
 
-	public function adicionarclientes($nome,$data_nascimento, $cpf,,$celular,$endereco,$email, $senha){
+	public function adicionarclientes($nome,$data_nascimento, $cpf,$celular,$endereco,$email, $senha){
 		$sql = "INSERT INTo clientes (nome, data_nascimento, cpf, celular, endereco, email, senha)
 		        VALUES (:nome, :data_nascimento, :cpf, :celular, :endereco,:email, :senha)";
 

@@ -14,7 +14,6 @@
         $clientes->adicionarclientes($nome, $data_nascimento, $cpf, $celular, $endereco, $email, $senha); // Chama o método 'adicionar' da instância de Clientes com os parâmetros fornecidos
     }
     
-
 header("Location: login.php");
 exit;
 ?>
