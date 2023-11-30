@@ -17,7 +17,7 @@
             Produtos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Listar produtos</a></li>
+            <li><a class="dropdown-item" href="Listarprodutos.php">Listar produtos</a></li>
             <li><a class="dropdown-item" href="Cadastroprodutos.php">Cadastrar produtos</a></li>
           </ul>
         </li>
