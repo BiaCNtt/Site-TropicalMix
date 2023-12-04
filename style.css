@@ -5,7 +5,9 @@
    
 }
 
-
+body{
+  background-color: #EED5FF!important;
+}
 .container .row .texto {
     display: flex;
     justify-content: center;
@@ -61,8 +63,12 @@ section {
     padding-top: 10px;
     margin-top: 15px;
     color: #3a0055;
+    
   }
 
-  
-
+  .img-produto{
+    max-width: 200px;
+    width: 100%;
+  }
+ 
   

@@ -15,6 +15,9 @@ class Produtos extends model{
 		return $this->db->lastInsertId();
 	}
 
+
+
+
 	//função de editar os produtos
 	public function editarprodutos($id_produto,$nome,$preco,$quantidade_em_estoque,$descricao){
 		$sql = "UPDATE pessoa 
