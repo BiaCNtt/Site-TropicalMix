@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 if (empty($_SESSION['carrinho'])) {
     // Carrinho já está vazio, exibe mensagem de aviso
     echo '<script>alert("O carrinho já está vazio."); window.location.href = "Carrinho.php";</script>';
