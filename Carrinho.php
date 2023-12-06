@@ -20,15 +20,9 @@ $precoTotal = 0;
 if (isset($_SESSION['carrinho'])) {
     // Calcula o preço total de todos os produtos no carrinho
     foreach ($_SESSION['carrinho'] as $item) {
-        // Converte as strings para números (ponto flutuante)
-        $precoItem = floatval($item['preco']);
-        $quantidade = intval($item['quantidade']);
-
-        // Calcula o preço total do item
-        $precoTotal += $precoItem * $quantidade;
+        $precoTotal += $item['preco'] * $item['quantidade'];
     }
 }
-
 
 ?>
 
@@ -60,8 +54,7 @@ if (isset($_SESSION['carrinho'])) {
                             <td><?php echo $item['nome']; ?></td>
                             <td>R$ <?php echo number_format($item['preco'], 2, ',', '.'); ?></td>
                             <td><?php echo $item['quantidade']; ?></td>
-                            <td>R$ <?php echo number_format(floatval($item['preco']) * intval($item['quantidade']), 2, ',', '.'); ?></td>
-
+                            <td>R$ <?php echo number_format($item['preco'] * $item['quantidade'], 2, ',', '.'); ?></td>
                             <td>
                                 <!-- Botão "Excluir" -->
                                 <button type="button" class="btn btn-danger" onclick="removerItem(<?php echo $item['id_produto']; ?>)">
@@ -86,5 +79,5 @@ if (isset($_SESSION['carrinho'])) {
     </main>
 
     <?php require 'footer.php';
-?>
+   ?>
             </div>
