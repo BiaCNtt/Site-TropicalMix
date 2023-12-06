@@ -3,6 +3,11 @@
         // Redireciona para removerItemCarrinho.php com o ID do produto
         window.location.href = 'excluircarrinho.php?id_produto=' + id;
     }
+
+    function limparcarrinho() {
+        // Redireciona para Limparcarrinho.php para limpar o carrinho
+        window.location.href = 'Limparcarrinho.php';
+    }
 </script>
 
 <?php
@@ -18,6 +23,7 @@ if (isset($_SESSION['carrinho'])) {
         $precoTotal += $item['preco'] * $item['quantidade'];
     }
 }
+
 ?>
 
 
@@ -59,17 +65,18 @@ if (isset($_SESSION['carrinho'])) {
                                 </button>
                             </td>
                         </tr>
+                        
                 <?php endforeach;
                 } ?>
             </tbody>
         </table>
-
-        <!-- Preço total e botão "Comprar" -->
         <div class="text-right">
             <h4><strong>Preço Total: R$<?php echo number_format($precoTotal, 2, ',', '.'); ?></strong></h4>
-            <button href="" class="btn btn-primary btn-lg">Comprar</button>
+            <a href="Comprafinal.php" class="btn btn-primary btn-lg">Comprar</a>
+            <button type= "button" class="btn btn-primary btn-lg" onclick="limparcarrinho()">Limpar carrinho</button>
+        
         </div>
     </main>
 
-    <?php require 'footer.php'; ?>
+    <?php require 'footer.php';?>
             </div>

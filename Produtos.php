@@ -15,6 +15,7 @@ class Produtos extends model{
 		return $this->db->lastInsertId();
 	}
 
+	
 
 
 

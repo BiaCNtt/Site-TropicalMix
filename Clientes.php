@@ -18,6 +18,22 @@ class Clientes extends model{
 		return $this->db->lastInsertId();
 	}
 
+	public function cadastro($nome, $cpf,$celular,$endereco,$email){
+		$sql = "INSERT INTo clientes (nome, cpf, celular, endereco, email)
+		        VALUES (:nome, :cpf, :celular, :endereco,:email)";
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":nome"    , $nome);
+        $sql->bindValue(":cpf"    , $cpf);
+		$sql->bindValue(":celular", $celular);
+        $sql->bindValue(":endereco", $endereco);
+        $sql->bindValue(":email"    , $email);
+
+		$sql->execute();
+
+		return $this->db->lastInsertId();
+	}
+
 
 	public function editar($nome,$data_nascimento, $cpf,$celular,$endereco,$email, $senha){
 		$sql = "UPDATE clientes
