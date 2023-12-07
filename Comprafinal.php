@@ -1,7 +1,13 @@
+<?php
+    require 'run.php';
+    $clientes = new Clientes();
+    $dados = $clientes->getAll();
+?>
+
 <?php require 'head.php'; ?>
 
 <?php
-session_start();
+
 // Inicializa o preço total como zero
 $precoTotal = 0;
 // Verifica se a chave 'carrinho' está definida na sessão
