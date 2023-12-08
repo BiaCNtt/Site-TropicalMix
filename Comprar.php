@@ -33,12 +33,12 @@ require 'run.php';
                                 Descrição: <?php echo $produto['descricao']; ?>
                             </p>
                             <form action="adicionar_carrinho.php" method="post">
-    <div class="form-group">
-        <label for="quantidade">Quantidade:</label>
+    <div class="form-group" id="botoesad">
+        <label id="textquantidade"for="quantidade">Quantidade:</label>
         <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
-        <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Informe a quantidade desejada" min="1" required>
+        <input type="number" class="form-control" id="quantidade" name="quantidade" min="1" required>
     </div>
-    <button type="submit" class="btn btn-primary" name="adicionar">Adicionar</button>
+    <button id="botaoadicionar" type="submit" class="btn btn-primary" name="adicionar">Adicionar</button>
 </form>
 
                         </div>

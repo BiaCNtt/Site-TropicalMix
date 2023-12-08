@@ -66,9 +66,22 @@ section {
     
   }
 
+  #textquantidade{
+    margin-left: 50px;
+  }
   .img-produto{
     max-width: 200px;
     width: 100%;
+  }
+
+  #botaoadicionar{
+    text-align: center;
+    width: 100px; /* Ajuste o valor conforme necessário */
+    font-size: 15px;
+    background-color: #3a0055;
+    color: white;
+    margin-top: 15px;
+    margin-left: 50px;
   }
  
   
