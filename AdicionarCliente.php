@@ -10,7 +10,7 @@
         $clientes = new Clientes(); // Cria uma instância da classe Clientes
         $clientes->cadastro($nome, $cpf, $celular, $endereco, $email); // Chama o método 'adicionar' da instância de Clientes com os parâmetros fornecidos
        
-        
+
         $mtdpagamento; 
         if (isset($_POST['mtdpagamento'])) {
             $mtdpagamento = $_POST['mtdpagamento'];
@@ -20,6 +20,6 @@
             echo "Erro: Método de pagamento não selecionado.";
         }
         
-    
+        
     
 ?>

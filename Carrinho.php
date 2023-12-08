@@ -16,15 +16,14 @@ session_start();
 // Inicializa o preço total como zero
 $precoTotal = 0;
 $mtdpagamento;
-
 if (isset($_SESSION['carrinho'])) {
     // Calcula o preço total de todos os produtos no carrinho
     foreach ($_SESSION['carrinho'] as $item) {
-        // Certifique-se de que 'preco' e 'quantidade' são convertidos para inteiros
-        $preco = (float)$item['preco'];
-        $quantidade = (int)$item['quantidade'];
-        // Adiciona ao preço total
-        $precoTotal += $preco * $quantidade;
+        // Converte as strings para números (ponto flutuante)
+        $precoItem = floatval($item['preco']);
+        $quantidade = intval($item['quantidade']);
+        // Calcula o preço total do item
+        $precoTotal += $precoItem * $quantidade;
     }
 }
 

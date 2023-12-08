@@ -18,7 +18,6 @@ if (isset($_SESSION['carrinho'])) {
         // Converte as strings para números (ponto flutuante)
         $precoItem = floatval($item['preco']);
         $quantidade = intval($item['quantidade']);
-
         // Calcula o preço total do item
         $precoTotal += $precoItem * $quantidade;
     }
@@ -26,8 +25,12 @@ if (isset($_SESSION['carrinho'])) {
 
 <html>
     <main>
-    <br><h1 class="text-center">Meu pedido</h1><br>
-<table class="table">
+
+
+<div class="container text-center">
+  <div class="row align-items-start">
+  <h1 class="text-center">Meu pedido</h1><br>
+  <table class="table">
     <thead>
         <tr>
             <th>Produto</th>
@@ -53,9 +56,6 @@ if (isset($_SESSION['carrinho'])) {
 <div class="text-right">
     <h4 class = "tituloprecototal"><strong>Preço Total: R$<?php echo number_format($precoTotal, 2, ',', '.'); ?></strong></h4>
 </div>
-
-<div class="container text-center">
-  <div class="row align-items-start">
     <div class="col">
     <h3>Informe seus dados</h3>
     <form method="POST" action="AdicionarCliente.php">
