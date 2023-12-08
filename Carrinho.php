@@ -23,14 +23,12 @@ if (isset($_SESSION['carrinho'])) {
         // Certifique-se de que 'preco' e 'quantidade' são convertidos para inteiros
         $preco = (float)$item['preco'];
         $quantidade = (int)$item['quantidade'];
-
         // Adiciona ao preço total
         $precoTotal += $preco * $quantidade;
     }
 }
 
 ?>
-
     <?php require 'head.php'; ?>
     <?php require 'navbar.php'; ?>
 

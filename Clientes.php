@@ -18,27 +18,23 @@ class Clientes extends model{
 	}
 
 
-	public function editar($nome,$data_nascimento, $cpf,$celular,$endereco,$email, $senha){
+	public function editar($nome, $cpf,$celular,$endereco,$email){
 		$sql = "UPDATE clientes
 		           SET nome     = :nome
-		             , data_nascimento    = :data_nascimento
                      , cpf      = :cpf
 					 , celular  = :celular
                      , endereco = :endereco
                      , email    = :email
-                     , senha    = :senha
 		         WHERE id_cliente = :id_cliente";
 
-		$sql = $this->db->prepare($sql);
-		$sql->bindValue(":nome"     , $nome);
-		$sql->bindValue(":data_nascimento"    , $data_nascimento);
-        $sql->bindValue(":cpf" , $cpf);
-		$sql->bindValue(":celular", $celular);
-        $sql->bindValue(":endereco" , $endereco);
-        $sql->bindValue(":email" , $email);
-        $sql->bindValue(":senha" , $senha);
-		$sql->bindValue(":id_cliente", $id_cliente);
-		$sql->execute();
+				$sql = $this->db->prepare($sql);
+				$sql->bindValue(":nome"    , $nome);
+				$sql->bindValue(":cpf"    , $cpf);
+				$sql->bindValue(":celular", $celular);
+				$sql->bindValue(":endereco", $endereco);
+				$sql->bindValue(":email"    , $email);
+
+				$sql->execute();
 	}
 
 	public function excluir($id_clientes){

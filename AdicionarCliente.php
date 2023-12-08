@@ -9,8 +9,17 @@
         require 'run.php'; // Inclui o arquivo 'run.php'
         $clientes = new Clientes(); // Cria uma instância da classe Clientes
         $clientes->cadastro($nome, $cpf, $celular, $endereco, $email); // Chama o método 'adicionar' da instância de Clientes com os parâmetros fornecidos
+       
+        
+        $mtdpagamento; 
+        if (isset($_POST['mtdpagamento'])) {
+            $mtdpagamento = $_POST['mtdpagamento'];
+            // Faça o que quiser com $mtdpagamento, como armazená-lo no banco de dados
+            echo "Método de Pagamento Selecionado: $mtdpagamento";
+        } else {
+            echo "Erro: Método de pagamento não selecionado.";
+        }
+        
     
     
-/* header("Location: Comprar.php"); */
-exit;
 ?>

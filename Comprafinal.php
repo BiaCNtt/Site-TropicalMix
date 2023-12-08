@@ -7,10 +7,10 @@
 <?php require 'head.php'; ?>
 
 <?php
-
+$mtdpagamento;
 // Inicializa o preço total como zero
 $precoTotal = 0;
-$mtdpagamento;
+
 // Verifica se a chave 'carrinho' está definida na sessão
 if (isset($_SESSION['carrinho'])) {
     // Calcula o preço total de todos os produtos no carrinho
@@ -82,25 +82,25 @@ if (isset($_SESSION['carrinho'])) {
             <input type="email" class="form-control" id="email" name ="email" required placeholder="Seu email">
         </div>
         <button type="submit" class="btn btn-success" >Confirma</button>
-    </form>
+   
     </div>
     <div class="col">
 <h3>Forma de pagamento</h3>
-<div class="form-check">
-  <input class="form-check-input" type="radio"  value ="dinheiro" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Dinheiro </label><br>
-    <input class="form-check-input" type="radio"  value ="pix" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    PIX </label><br>
-    <input class="form-check-input" value ="debito"type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Cartão de Débito </label><br>
-    <input class="form-check-input" type="radio"  value ="credito"name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Cartão de crédito </label><br>
-    </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" value="dinheiro" name="mtdpagamento" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioDefault1">Dinheiro</label><br>
+
+    <input class="form-check-input" type="radio" value="pix" name="mtdpagamento" id="flexRadioDefault2">
+    <label class="form-check-label" for="flexRadioDefault2">PIX</label><br>
+
+    <input class="form-check-input" value="debito" type="radio" name="mtdpagamento" id="flexRadioDefault3">
+    <label class="form-check-label" for="flexRadioDefault3">Cartão de Débito</label><br>
+
+    <input class="form-check-input" type="radio" value="credito" name="mtdpagamento" id="flexRadioDefault4">
+    <label class="form-check-label" for="flexRadioDefault4">Cartão de Crédito</label><br>
+  </div>
   </div>
 </div>  
+</form>
 </main>
 <?php require 'footer.php'; ?>
