@@ -36,7 +36,7 @@ require 'run.php';
     <div class="form-group">
         <label for="quantidade">Quantidade:</label>
         <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
-        <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Informe a quantidade desejada" min="1">
+        <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Informe a quantidade desejada" min="1" required>
     </div>
     <button type="submit" class="btn btn-primary" name="adicionar">Adicionar</button>
 </form>

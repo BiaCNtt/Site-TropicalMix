@@ -10,6 +10,7 @@
 
 // Inicializa o preço total como zero
 $precoTotal = 0;
+$mtdpagamento;
 // Verifica se a chave 'carrinho' está definida na sessão
 if (isset($_SESSION['carrinho'])) {
     // Calcula o preço total de todos os produtos no carrinho
@@ -52,7 +53,10 @@ if (isset($_SESSION['carrinho'])) {
 <div class="text-right">
     <h4 class = "tituloprecototal"><strong>Preço Total: R$<?php echo number_format($precoTotal, 2, ',', '.'); ?></strong></h4>
 </div>
-<div class="col-md-6">
+
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
     <h3>Informe seus dados</h3>
     <form method="POST" action="AdicionarCliente.php">
         <div class="mb-3">
@@ -77,10 +81,26 @@ if (isset($_SESSION['carrinho'])) {
             <label for="email" class="form-label">Email:</label>
             <input type="email" class="form-control" id="email" name ="email" required placeholder="Seu email">
         </div>
-        <button type="submit" class="btn btn-success" >Enviar</button>
+        <button type="submit" class="btn btn-success" >Confirma</button>
     </form>
-</div>
-</div>
-        </div>
+    </div>
+    <div class="col">
+<h3>Forma de pagamento</h3>
+<div class="form-check">
+  <input class="form-check-input" type="radio"  value ="dinheiro" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Dinheiro </label><br>
+    <input class="form-check-input" type="radio"  value ="pix" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    PIX </label><br>
+    <input class="form-check-input" value ="debito"type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Cartão de Débito </label><br>
+    <input class="form-check-input" type="radio"  value ="credito"name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Cartão de crédito </label><br>
+    </div>
+  </div>
+</div>  
 </main>
 <?php require 'footer.php'; ?>

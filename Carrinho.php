@@ -15,17 +15,21 @@ session_start();
 
 // Inicializa o preço total como zero
 $precoTotal = 0;
+$mtdpagamento;
 
-// Verifica se a chave 'carrinho' está definida na sessão
 if (isset($_SESSION['carrinho'])) {
     // Calcula o preço total de todos os produtos no carrinho
     foreach ($_SESSION['carrinho'] as $item) {
-        $precoTotal += $item['preco'] * $item['quantidade'];
+        // Certifique-se de que 'preco' e 'quantidade' são convertidos para inteiros
+        $preco = (float)$item['preco'];
+        $quantidade = (int)$item['quantidade'];
+
+        // Adiciona ao preço total
+        $precoTotal += $preco * $quantidade;
     }
 }
 
 ?>
-
 
     <?php require 'head.php'; ?>
     <?php require 'navbar.php'; ?>
@@ -54,7 +58,8 @@ if (isset($_SESSION['carrinho'])) {
                             <td><?php echo $item['nome']; ?></td>
                             <td>R$ <?php echo number_format($item['preco'], 2, ',', '.'); ?></td>
                             <td><?php echo $item['quantidade']; ?></td>
-                            <td>R$ <?php echo number_format($item['preco'] * $item['quantidade'], 2, ',', '.'); ?></td>
+                            <td>R$ <?php echo number_format((float)$item['preco'] * (int)$item['quantidade'], 2, ',', '.'); ?></td>
+
                             <td>
                                 <!-- Botão "Excluir" -->
                                 <button type="button" class="btn btn-danger" onclick="removerItem(<?php echo $item['id_produto']; ?>)">

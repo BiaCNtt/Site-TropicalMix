@@ -8,6 +8,7 @@ if (isset($_POST['adicionar']))
         // Obtem as informações do produto com base no ID usando o método get() existente
         $produto_info = $produtos->get($id_produto);
         $produto_existente = false;
+        
         if (!empty($_SESSION['carrinho'])) {
             foreach ($_SESSION['carrinho'] as &$item) {
                 if ($item['id_produto'] == $id_produto) {

@@ -4,12 +4,10 @@
     $dados = $clientes->getAll();
 ?>
 
-
 <?php require 'head.php'; ?>
 
 <html>
     <main>
-                <!-- Formulário de Cadastro -->
                 <div class="col-md-6">
                     <h3>Cadastre-se</h3>
                     <form method="POST" action="AdicionarCliente.php">
@@ -49,8 +47,5 @@
                 </div>
             </div>
         </div>
-      
-
     </main>
-   
-    <?php require 'footer.php'; ?>
+<?php require 'footer.php'; ?>
