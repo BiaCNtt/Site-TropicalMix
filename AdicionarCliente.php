@@ -1,25 +1,57 @@
-<?php  //enviando os valores pelo metodo post que ta pegando do form
+<?php  
+    require './run.php'; 
+    $produtos = new Produtos();
+
+   
+    
+    
+//enviando os valores pelo metodo post que ta pegando do form
     $nome      = $_POST['nome'];
     $cpf = $_POST['cpf'];
     $celular =  $_POST['celular'];
     $endereco  = $_POST['endereco'];
     $email= $_POST['email'];
     
-   // Checa se o campo 'nome' não foi enviado no formulário
-        require 'run.php'; // Inclui o arquivo 'run.php'
-        $clientes = new Clientes(); // Cria uma instância da classe Clientes
-        $clientes->cadastro($nome, $cpf, $celular, $endereco, $email); // Chama o método 'adicionar' da instância de Clientes com os parâmetros fornecidos
-       
+    $clientes = new Clientes(); 
+    $clientes->cadastro($nome, $cpf, $celular, $endereco, $email); //cadastra no banco
 
-        $mtdpagamento; 
-        if (isset($_POST['mtdpagamento'])) {
-            $mtdpagamento = $_POST['mtdpagamento'];
-            // Faça o que quiser com $mtdpagamento, como armazená-lo no banco de dados
-            echo "Método de Pagamento Selecionado: $mtdpagamento";
-        } else {
-            echo "Erro: Método de pagamento não selecionado.";
-        }
-        
-        
+    $mtdpagamento; 
+    if (isset($_POST['mtdpagamento'])) {
+        $mtdpagamento = $_POST['mtdpagamento'];
+    } else {
+        echo "Erro: Método de pagamento não selecionado.";
+    }    
+
+
+//parte que calcula a quantidade do item do carrinho pelo id
+
+    foreach ($_SESSION['carrinho'] as $item) {
+        $id_produto          = intval($item['id_produto']);
+        $quantidade_carrinho = intval($item['quantidade']);
+        $dados = $produtos->get($id_produto);
+        $quantidade_em_estoque = intval($dados['quantidade_em_estoque']);
+        // Calcula a nova quantidade disponível após a compra
+        $qtddisponivel = $quantidade_em_estoque - $quantidade_carrinho;
+       if($qtddisponivel>0){
+        $produtos->atualizar_estoque($id_produto,$qtddisponivel);
+       }
+       else{
+        echo "Quantidade não disponivel";
+       }
+
+       if(isset($_SESSION['carrinho'])){
+        unset($_SESSION['carrinho']);  
+       }  
+       header("Location: obrigado.php");
+        exit;
+
+
+ 
+    
+} 
+
+       
+       
     
 ?>
+

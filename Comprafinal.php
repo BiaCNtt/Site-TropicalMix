@@ -1,35 +1,34 @@
 <?php
     require 'run.php';
+
+    if(!isset($_SESSION['carrinho']) || count($_SESSION['carrinho'])==0){
+        header("Location: index.php");
+        exit;
+    }
+
     $clientes = new Clientes();
-    $dados = $clientes->getAll();
 ?>
 
 <?php require 'head.php'; ?>
 
 <?php
 $mtdpagamento;
-// Inicializa o preço total como zero
 $precoTotal = 0;
 
 // Verifica se a chave 'carrinho' está definida na sessão
 if (isset($_SESSION['carrinho'])) {
-    // Calcula o preço total de todos os produtos no carrinho
     foreach ($_SESSION['carrinho'] as $item) {
-        // Converte as strings para números (ponto flutuante)
         $precoItem = floatval($item['preco']);
         $quantidade = intval($item['quantidade']);
-        // Calcula o preço total do item
         $precoTotal += $precoItem * $quantidade;
     }
-}?>
-
+}
+?>
 <html>
     <main>
-
-
-<div class="container text-center">
+<div class="container ">
   <div class="row align-items-start">
-  <h1 class="text-center">Meu pedido</h1><br>
+  <h1 class="text-center">Resumo do pedido</h1><br>
   <table class="table">
     <thead>
         <tr>
@@ -55,7 +54,7 @@ if (isset($_SESSION['carrinho'])) {
 </table>
 <div class="text-right">
     <h4 class = "tituloprecototal"><strong>Preço Total: R$<?php echo number_format($precoTotal, 2, ',', '.'); ?></strong></h4>
-</div>
+</div><br>
     <div class="col">
     <h3>Informe seus dados</h3>
     <form method="POST" action="AdicionarCliente.php">
@@ -81,7 +80,7 @@ if (isset($_SESSION['carrinho'])) {
             <label for="email" class="form-label">Email:</label>
             <input type="email" class="form-control" id="email" name ="email" required placeholder="Seu email">
         </div>
-        <button type="submit" class="btn btn-success" >Confirma</button>
+        <button type="submit" id= "botaoconfirma" class="btn btn-success" >Confirma</button>
    
     </div>
     <div class="col">
@@ -103,4 +102,4 @@ if (isset($_SESSION['carrinho'])) {
 </div>  
 </form>
 </main>
-<?php require 'footer.php'; ?>
+<?php require 'footer.php';?>

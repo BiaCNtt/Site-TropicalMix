@@ -1,40 +1,26 @@
-<script>
-    function removerItem(id) {
-        // Redireciona para removerItemCarrinho.php com o ID do produto
-        window.location.href = 'excluircarrinho.php?id_produto=' + id;
-    }
-
-    function limparcarrinho() {
-        // Redireciona para Limparcarrinho.php para limpar o carrinho
-        window.location.href = 'Limparcarrinho.php';
-    }
-</script>
-
 <?php
 session_start();
 
-// Inicializa o preço total como zero
+if(!isset($_SESSION['carrinho']) || count($_SESSION['carrinho'])==0){
+    header("Location: index.php");
+    exit;
+}
+
 $precoTotal = 0;
 $mtdpagamento;
 if (isset($_SESSION['carrinho'])) {
-    // Calcula o preço total de todos os produtos no carrinho
     foreach ($_SESSION['carrinho'] as $item) {
-        // Converte as strings para números (ponto flutuante)
         $precoItem = floatval($item['preco']);
         $quantidade = intval($item['quantidade']);
-        // Calcula o preço total do item
         $precoTotal += $precoItem * $quantidade;
     }
 }
-
 ?>
     <?php require 'head.php'; ?>
     <?php require 'navbar.php'; ?>
 
     <main class="container mt-5" id="formulario">
         <br><h1 class="text-center">Carrinho de Compras</h1><br>
-
-        <!-- Tabela de produtos no carrinho -->
         <table class="table">
             <thead>
                 <tr>
@@ -47,7 +33,6 @@ if (isset($_SESSION['carrinho'])) {
             </thead>
             <tbody>
                 <?php
-                // Verifica se a chave 'carrinho' está definida na sessão
                 if (isset($_SESSION['carrinho'])) {
                     foreach ($_SESSION['carrinho'] as $item) :
                 ?>
@@ -79,6 +64,16 @@ if (isset($_SESSION['carrinho'])) {
         
         </div>
     </main>
+
+    <script>
+        function removerItem(id) {
+            window.location.href = 'excluircarrinho.php?id_produto=' + id;
+        }
+
+        function limparcarrinho() {
+            window.location.href = 'Limparcarrinho.php';
+        }
+    </script>
 
     <?php require 'footer.php';
    ?>

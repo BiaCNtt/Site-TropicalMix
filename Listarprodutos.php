@@ -31,7 +31,7 @@ require 'run.php';
                                 Quantidade: <?php echo $produto['quantidade_em_estoque']; ?><br>
                                 Descrição: <?php echo $produto['descricao']; ?>
                             </p>
-                            <a href="excluirproduto.php?id_produto=<?php echo $produto['id_produto']; ?>" onclick="return confirm('Deseja excluir esse produto?');" class="btn btn-danger">
+                            <a id="botaoexcluir" href="excluirproduto.php?id_produto=<?php echo $produto['id_produto']; ?>" onclick="return confirm('Deseja excluir esse produto?');" class="btn btn-danger">
                             Excluir
                             </a>
                                             

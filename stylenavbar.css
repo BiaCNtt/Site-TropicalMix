@@ -31,6 +31,15 @@
     color: rgb(255, 255, 255);
 }
 
-.navbar .container-fluid .icone{
-    margin-bottom: 5px;
+
+.icone-container {
+    align-items: center;
+  }
+
+#icone a{
+    font-size: 20px;
+    font-family: 'Hanuman';
+    color: rgb(255, 255, 255);
+    text-align: end;
+    justify-content: end;
 }

@@ -14,6 +14,22 @@ class Produtos extends model{
 
 		return $this->db->lastInsertId();
 	}
+
+	//function pra atualizar a quantidade em estoque
+
+	public function atualizar_estoque($id_produto,$quantidade_em_estoque){
+		$sql = "UPDATE produtos SET 
+		quantidade_em_estoque   = :quantidade
+		where id_produto = :id_produto";
+
+	    $sql = $this->db->prepare($sql);
+		$sql->bindValue(":quantidade", $quantidade_em_estoque);
+		$sql->bindValue(":id_produto", $id_produto);
+		$sql->execute();
+	}
+
+
+
 	//função de editar os produtos
 	public function editarprodutos($id_produto,$nome,$preco,$quantidade_em_estoque,$descricao){
 		$sql = "UPDATE pessoa 

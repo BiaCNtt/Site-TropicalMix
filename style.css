@@ -58,6 +58,12 @@ section {
     color: white;
 }
 
+#botaoexcluir{
+  width: 80px; /* Ajuste o valor conforme necessário */
+  font-size: 15px;
+  background-color: #3a0055;
+  color: white;
+}
 
   #formulario{
     padding-top: 10px;
@@ -83,5 +89,7 @@ section {
     margin-top: 15px;
     margin-left: 50px;
   }
+
+
  
   
